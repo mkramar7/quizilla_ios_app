@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quizilla" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Quizilla" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynosaur" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Nt-TbA">
-                                <rect key="frame" x="107" y="159" width="200" height="200.00000000000023"/>
+                                <rect key="frame" x="107" y="159" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Svb-c0-Bi3"/>
                                     <constraint firstAttribute="width" constant="200" id="pzo-iK-KZ2"/>
@@ -68,6 +68,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wB1-Nt-TbA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XAL-dh-LA3"/>
                             <constraint firstItem="pNb-mT-4Az" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="axA-wM-B6A"/>
@@ -79,16 +80,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outletCollection property="buttons" destination="3MJ-MF-8lV" collectionClass="NSMutableArray" id="wAp-FC-j6d"/>
-                        <outletCollection property="buttons" destination="OPf-1N-SqJ" collectionClass="NSMutableArray" id="cNw-BY-gZo"/>
-                        <outletCollection property="buttons" destination="2jT-gi-GMY" collectionClass="NSMutableArray" id="qrg-7A-rlW"/>
-                        <outletCollection property="buttons" destination="C8o-Ao-dxA" collectionClass="NSMutableArray" id="BB5-l3-QVM"/>
                         <segue destination="g1q-zx-sHg" kind="presentation" identifier="questionSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="FQI-xK-I61"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-767" y="52"/>
+            <point key="canvasLocation" x="-862" y="47"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="bgb-qj-9sZ">
@@ -106,7 +103,6 @@
                                 <state key="normal" title="Loading answer..."/>
                                 <connections>
                                     <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="9z2-Vv-ebY"/>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LGE-oJ-dTt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-NE-Euo">
@@ -143,10 +139,11 @@
                                 <rect key="frame" x="20" y="196" width="374" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AQn-Hp-RIn"/>
                     </view>
                     <navigationItem key="navigationItem" id="drt-0u-bAU"/>
@@ -156,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSz-mp-tzd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205.79710144927537" y="29.464285714285712"/>
+            <point key="canvasLocation" x="248" y="52"/>
         </scene>
     </scenes>
     <resources>

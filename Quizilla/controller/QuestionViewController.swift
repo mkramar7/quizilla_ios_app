@@ -21,10 +21,25 @@ class QuestionViewController: QuizillaViewController {
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
-        if sender.tag == self.currentQuestion!.correctAnswerId {
-            showAlert(title: "Correct!", message: "Congratulations! The answer is correct!", correct: true)
+        let correct = sender.tag == self.currentQuestion!.correctAnswerId
+        if correct {
+            GameUtil.playCorrectSound()
+            showToast(message: "You are correct!", type: .positive)
+            sender.backgroundColor = UIColor.green.withAlphaComponent(0.6)
+            sender.tintColor = UIColor.black
         } else {
-            showAlert(title: "Wrong!", message: "The answer is wrong! Please try again!", correct: false)
+            GameUtil.playWrongSound()
+            showToast(message: "You are wrong!", type: .negative)
+            sender.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+            sender.tintColor = UIColor.white
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            sender.backgroundColor = UIColor.clear
+            sender.tintColor = UIColor.systemBlue
+            if (correct) {
+                self.getNextQuestion()
+            }
         }
     }
     
@@ -45,7 +60,6 @@ class QuestionViewController: QuizillaViewController {
             btn!.setTitle(answer.answer, for: [])
         }
     }
-    
     
     func getNextQuestion() {
         var request = URLRequest(url: URL(string: randomQuestionUrl)!)

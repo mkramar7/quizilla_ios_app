@@ -60,20 +60,18 @@ class QuestionViewController: UIViewController {
         let session = URLSession.shared
         
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            do {
-                let rawJson = try JSONSerialization.jsonObject(with: data!)
-                if let dictionary = rawJson as? [String: Any] {
-                    if let question = dictionary["question"] as? String {
-                        DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                do {
+                    let rawJson = try JSONSerialization.jsonObject(with: data!)
+                    if let dictionary = rawJson as? [String: Any] {
+                        if let question = dictionary["question"] as? String {
                             self.questionLabel.text = question
                         }
-                    }
-                    
-                    if let answers = dictionary["answers"] as? [Any] {
-                        for answerObj in answers {
-                            if let answer = answerObj as? [String: Any] {
-                                if let id = answer["id"] as? Int, let answerString = answer["answer"] as? String {
-                                    DispatchQueue.main.async {
+                        
+                        if let answers = dictionary["answers"] as? [Any] {
+                            for answerObj in answers {
+                                if let answer = answerObj as? [String: Any] {
+                                    if let id = answer["id"] as? Int, let answerString = answer["answer"] as? String {
                                         if (id == 1) {
                                             self.btnAnswer1.setTitle(answerString, for: UIControl.State.normal)
                                         } else if (id == 2) {
@@ -84,18 +82,18 @@ class QuestionViewController: UIViewController {
                                             self.btnAnswer4.setTitle(answerString, for: UIControl.State.normal)
                                         }
                                     }
+                                    
                                 }
-                                
                             }
                         }
+                        
+                        if let correctAnswer = dictionary["correctAnswerId"] as? Int {
+                            self.correctAnswerId = correctAnswer
+                        }
                     }
-                    
-                    if let correctAnswer = dictionary["correctAnswerId"] as? Int {
-                        self.correctAnswerId = correctAnswer
-                    }
+                } catch {
+                    print("error")
                 }
-            } catch {
-                print("error")
             }
         })
 

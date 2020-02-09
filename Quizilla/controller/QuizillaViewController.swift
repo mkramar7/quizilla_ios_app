@@ -19,7 +19,9 @@ class QuizillaViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.systemGray4
-        setBlueBorderWithRadiusForAllButtons(self.view)
+        doActionForEachButton(self.view, doAction: { (button) in
+            button.setBlueBorderWithRadius()
+        })
     }
     
     func showToast(message: String, type: ToastType) {
@@ -75,12 +77,12 @@ class QuizillaViewController: UIViewController {
         })
    }
     
-    private func setBlueBorderWithRadiusForAllButtons(_ view: UIView){
+    func doActionForEachButton(_ view: UIView, doAction action: @escaping (_ button: UIButton) -> Void) {
         for view in view.subviews as [UIView] {
             if let button = view as? UIButton {
-                button.setBlueBorderWithRadius()
+                action(button)
             } else {
-                setBlueBorderWithRadiusForAllButtons(view)
+                doActionForEachButton(view, doAction: action)
             }
         }
     }

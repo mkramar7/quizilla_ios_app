@@ -10,6 +10,11 @@ import UIKit
 
 class MainViewController: QuizillaViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        SingletonAudioPlayer.sharedInstance.initialize()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "questionSegue" {
             let questionViewController = segue.destination as! QuestionViewController

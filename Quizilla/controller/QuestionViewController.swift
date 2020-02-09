@@ -21,12 +21,15 @@ class QuestionViewController: QuizillaViewController {
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
+        resetAllButtonColorsToDefault()
+        
         let correct = sender.tag == self.currentQuestion!.correctAnswerId
         if correct {
             GameUtil.playCorrectSound()
             showToast(message: "You are correct!", type: .positive)
             sender.backgroundColor = UIColor.green.withAlphaComponent(0.6)
             sender.tintColor = UIColor.black
+            toggleEnableOrDisableOnButtons(isEnabled: false)
         } else {
             GameUtil.playWrongSound()
             showToast(message: "You are wrong!", type: .negative)
@@ -35,12 +38,26 @@ class QuestionViewController: QuizillaViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            sender.backgroundColor = UIColor.clear
-            sender.tintColor = UIColor.systemBlue
+            self.resetAllButtonColorsToDefault()
             if (correct) {
                 self.getNextQuestion()
+                self.toggleEnableOrDisableOnButtons(isEnabled: true)
             }
         }
+    }
+    
+    private func resetAllButtonColorsToDefault() {
+        doActionForEachButton(self.view, doAction: { (button) in
+            button.tintColor = UIColor.systemBlue
+            button.backgroundColor = UIColor.clear
+        })
+    }
+    
+    private func toggleEnableOrDisableOnButtons(isEnabled: Bool) {
+        doActionForEachButton(self.view, doAction: { (button) in
+            button.isEnabled = isEnabled
+        })
+
     }
     
     func showAlert(title: String, message: String, correct: Bool) {

@@ -110,7 +110,6 @@
 		B5F7946023EFFAFE00722ADC /* model */ = {
 			isa = PBXGroup;
 			children = (
-				B5F7946123EFFB1800722ADC /* Question.swift */,
 				B5F7946323EFFB6100722ADC /* Answer.swift */,
 			);
 			path = model;
@@ -122,6 +121,7 @@
 				B56427E723AEC8EB000C33FE /* MainViewController.swift */,
 				B5F7945E23EE46A500722ADC /* QuestionViewController.swift */,
 				B530832023F02A5000B8B32C /* QuizillaViewController.swift */,
+				B5F7946123EFFB1800722ADC /* Question.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";

@@ -9,9 +9,9 @@
 import Foundation
 
 struct Question : Codable {
-    let id: String
+    let id: Int64
     let question: String
-    let category: String
+    let category: Category
     let answers: [Answer]
     let correctAnswerId: Int
 }

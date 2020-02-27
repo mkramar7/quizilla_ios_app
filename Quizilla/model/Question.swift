@@ -12,6 +12,7 @@ struct Question : Codable {
     let id: Int64
     let question: String
     let category: Category
-    let answers: [Answer]
+    let language: Language
+    let answers: [String: String]
     let correctAnswerId: Int
 }

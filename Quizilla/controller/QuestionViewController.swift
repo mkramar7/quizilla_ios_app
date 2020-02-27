@@ -72,9 +72,13 @@ class QuestionViewController: QuizillaViewController {
     
     func mapQuestionToView() {
         self.questionLabel.text = self.currentQuestion!.question
-        for answer in self.currentQuestion!.answers {
-            let btn = self.view.viewWithTag(answer.id) as? UIButton
-            btn!.setTitle(answer.answer, for: [])
+        
+        var i = 0
+        for (answerId, answerText) in self.currentQuestion!.answers {
+            let btn = getButtons(self.view)[i]
+            btn.tag = Int(answerId)!
+            btn.setTitle(answerText, for: [])
+            i += 1
         }
     }
     

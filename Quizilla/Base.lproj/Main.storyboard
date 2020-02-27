@@ -55,7 +55,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynosaur" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Nt-TbA">
-                                <rect key="frame" x="107" y="159" width="200" height="200.00000000000023"/>
+                                <rect key="frame" x="107" y="159" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Svb-c0-Bi3"/>
                                     <constraint firstAttribute="width" constant="200" id="pzo-iK-KZ2"/>
@@ -95,44 +95,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y53-gd-fBt">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y53-gd-fBt">
                                 <rect key="frame" x="20" y="399" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Loading answer..."/>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="9z2-Vv-ebY"/>
+                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="2Lf-I6-aqn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-NE-Euo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8e-NE-Euo">
                                 <rect key="frame" x="20" y="543" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Loading answer..."/>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="W7j-J6-iOl"/>
+                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="CN4-d7-Dzj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-lB-v7D">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-lB-v7D">
                                 <rect key="frame" x="20" y="472" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Loading answer..."/>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="EG7-Es-HJJ"/>
+                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="XWh-rx-HaL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyH-mR-D1K">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyH-mR-D1K">
                                 <rect key="frame" x="20" y="614" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="11" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Loading answer..."/>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="HZc-yk-6zO"/>
+                                    <action selector="buttonClicked:" destination="g1q-zx-sHg" eventType="touchUpInside" id="ubA-aD-rhI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading next question..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6b-Oq-kEh">

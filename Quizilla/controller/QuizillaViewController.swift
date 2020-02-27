@@ -87,4 +87,15 @@ class QuizillaViewController: UIViewController {
         }
     }
     
+    func getButtons(_ view: UIView) -> [UIButton] {
+        var buttonsList = [UIButton]()
+        for view in view.subviews as [UIView] {
+            if let button = view as? UIButton {
+                buttonsList.append(button)
+            }
+        }
+        
+        return buttonsList
+    }
+    
 }
